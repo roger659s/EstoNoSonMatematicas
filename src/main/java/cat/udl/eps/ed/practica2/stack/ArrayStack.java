@@ -1,5 +1,3 @@
-package cat.udl.eps.ed.practica2.stack;
-
 public class ArrayStack<E> implements Stack<E> {
     // ¿?
     @Override
