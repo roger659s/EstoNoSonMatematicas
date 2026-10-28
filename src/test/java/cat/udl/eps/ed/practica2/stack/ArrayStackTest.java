@@ -44,5 +44,12 @@ public class ArrayStackTest {
         assertFalse(emptyStack.isEmpty());
     }
 
-
+    @Test
+    void pop_on_onePlace_stack_should_be_empty(){
+        var emptyStack = new ArrayStack<Integer>();
+        var prov1 = 10;
+        emptyStack.push(prov1);
+        emptyStack.pop();
+        assertTrue(emptyStack.isEmpty());
+    }
 }
