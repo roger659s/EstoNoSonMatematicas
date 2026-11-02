@@ -61,7 +61,7 @@ public class numPartitions {
     private static int numPartitionsIter(int sum, int numParts) {
         // Precondition: sum > 0
         int return_ = 0;
-        var stack = new ArrayStack<Context>();/*MIRAR*/
+        Stack<Context> stack = new ArrayStack<>();
         stack.push(new Context(sum, numParts));
         while (!stack.isEmpty()) {
             var context = stack.top();
