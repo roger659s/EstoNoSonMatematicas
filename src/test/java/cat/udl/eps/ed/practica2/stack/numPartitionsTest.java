@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class numPartitionsTest {
     private final int MAX = 20;
+    private final int OVERFLOW = 30;
     @Test
     void golden() {
         for (int sum = 1; sum <= MAX ; sum++) {
@@ -22,6 +23,12 @@ public class numPartitionsTest {
         assertEquals(3, numPartitions.numPartitionsIter(3));
         assertEquals(5, numPartitions.numPartitionsIter(4));
         assertEquals(7, numPartitions.numPartitionsIter(5));
+    }
+
+    @Test
+    void large_without_stack_overflow(){
+        int expected = 5604;
+        assertEquals(expected,numPartitions.numPartitionsIter(OVERFLOW));
     }
 
 
