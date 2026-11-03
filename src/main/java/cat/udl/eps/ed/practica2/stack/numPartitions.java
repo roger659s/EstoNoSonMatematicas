@@ -11,7 +11,7 @@ public class numPartitions {
         // Entry point
         EntryPoint entryPoint;
 
-        public Context(int sum, int numParts) {
+        Context(int sum, int numParts) {
             this.sum = sum;
             this.numParts = numParts;
             this.np1 = 0;
@@ -22,14 +22,6 @@ public class numPartitions {
 
     private enum EntryPoint {
         CALL, RESUME1, RESUME2;
-    }
-    public static int numPartitionsIter(int sum) {
-        // Precondition: sum > 0
-        int count = 0;
-        for (int numParts = 1; numParts <= sum; ++numParts) {
-            count += numPartitionsIter(sum, numParts);
-        }
-        return count;
     }
 
     public static int numPartitionsRec(int sum) {
@@ -56,6 +48,15 @@ public class numPartitions {
             // RESUME2
             return np1 + np2;
         }
+    }
+
+    public static int numPartitionsIter(int sum) {
+        // Precondition: sum > 0
+        int count = 0;
+        for (int numParts = 1; numParts <= sum; ++numParts) {
+            count += numPartitionsIter(sum, numParts);
+        }
+        return count;
     }
 
     private static int numPartitionsIter(int sum, int numParts) {
