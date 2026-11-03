@@ -65,7 +65,7 @@ public class numPartitions {
         Stack<Context> stack = new ArrayStack<>();
         stack.push(new Context(sum, numParts));
         while (!stack.isEmpty()) {
-            var context = stack.top();
+            Context context = stack.top();
             switch (context.entryPoint) {
                 case CALL -> {
                     if (context.numParts <= 0 || context.numParts > context.sum) {
